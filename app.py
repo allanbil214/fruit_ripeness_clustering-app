@@ -9,7 +9,7 @@ import pandas as pd
 
 def preprocessing_gambar(gambar):
     """Resize and normalize images"""
-    resized_images = [cv2.resize(img, (720, 720)) for img in gambar]
+    resized_images = [cv2.resize(img, (256, 256)) for img in gambar]
     normalized_images = [cv2.normalize(img, None, alpha=0, beta=1, norm_type=cv2.NORM_MINMAX, dtype=cv2.CV_32F) for img in resized_images]
     return normalized_images
 
